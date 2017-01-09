@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact name="GoLang">
+    <output-path>$PROJECT_DIR$/out/artifacts/GoLang</output-path>
+    <root id="root" />
+  </artifact>
+</component>

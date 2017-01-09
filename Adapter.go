@@ -35,7 +35,7 @@ type ConnectorDB struct {
 	err error
 }
 func connect() ConnectorDB  {
-	db, err := sql.Open("mysql", "root:@/service_user_management?charset=utf8")
+	db, err := sql.Open("mysql", "root:gitsgits@/service_user_management?charset=utf8")
 	checkErr(err)
 	fmt.Print("connected")
 	return ConnectorDB{ db:db, err:err }
