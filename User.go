@@ -25,9 +25,9 @@ func getMyProfile(ctx *iris.Context) {
 
 }
 func register(ctx *iris.Context) {
-	var name = ctx.PostValue("username")
-	var email = ctx.PostValue("email")
-	var password = ctx.PostValue("password")
+	var name = ctx.FormValue("username")
+	var email = ctx.FormValue("email")
+	var password = ctx.FormValue("password")
 
 	dUser :=&MUser{Email:email, Username:name,Password:password}
 	result, err := govalidator.ValidateStruct(dUser)
@@ -62,9 +62,9 @@ func register(ctx *iris.Context) {
 	}
 }
 func updateProfile(ctx *iris.Context) {
-	var name = ctx.PostValue("name")
-	var email = ctx.PostValue("email")
-	i, err := strconv.Atoi(ctx.PostValue("id"))
+	var name = ctx.FormValue("name")
+	var email = ctx.FormValue("email")
+	i, err := strconv.Atoi(ctx.FormValue("id"))
 	if err != nil {
 		ctx.JSON(iris.StatusBadRequest,iris.Map{"status":false,"message":MessageDevel{Devel:"failed",Prod:"Id must be integer"}})
 	}else{
