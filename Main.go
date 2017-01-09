@@ -9,6 +9,8 @@ import (
 func main()  {
 	fmt.Print("USER MANAGEMENT START")
 	api  := iris.New()
+	api.Use(logger.New())
+
 	api.Get("/", func(ctx *iris.Context) {
 		ctx.JSON(iris.StatusOK,iris.Map{"status":true})
 	})
@@ -28,7 +30,7 @@ func main()  {
 	admin.Post("/delete",deleteUser)
 	admin.Post("/update/field",updateField)
 
-	api.Use(logger.New())
+
 
 	api.Listen(":8080")
 }
