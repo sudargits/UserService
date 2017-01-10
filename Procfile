@@ -1,1 +1,1 @@
-web: UserManagement
+web: user-service
